@@ -19,7 +19,7 @@ int getLine(char s[]){
 int getWord(char w[]){
     int count = 0;
     char c = getchar();
-    while ( c!= '\n' || != '\t' || != ' ' ||!= EOF ){
+    while ( c!= '\n' || c!= '\t' || c != ' ' || c!= EOF ){
         w[count] = c;
         count++;
         c = getchar();
@@ -85,16 +85,13 @@ void print_line(char* str){
             printf("%s", current);
         }
     }
-
 }
 
 int main(){
     char word[WORD];
-    scanf("%s", word);
+    char space,choice;
+    scanf("%s %c%c", word, &space, &choice);
 
-    printf ("%s", word);
-    char choice;
-    scanf("%c", &choice);
     if (choice == 'a'){
         print_line(word);
     }
