@@ -4,29 +4,43 @@
 #define WORD 30
 #define NUMLINES 250
 
+
+
 int getLine(char s[]){
     int count = 0;
-    char c = getchar();
-    while (c != '\n'){
-        s[count] = c;
-        c = getchar();
-        count++;
-    }
-    s[count]='\0';
-    return count;
+    while (count<LINE){
+        scanf("%c", &(s[count]));
+        if(s[count] != '\n' && s[count] != '\r'){
+            count++;
+        }
+        else{
+            s[count] = '\0';
+            count++;
+            break;
+    
+        }
+    }return count; 
 }
+
 
 int getWord(char w[]){
     int count = 0;
-    char c = getchar();
-    while ( c!= '\n' || c!= '\t' || c != ' ' || c!= EOF ){
-        w[count] = c;
-        count++;
-        c = getchar();
+    while (count<WORD){
+        scanf("%c", &(w[count]));
+        if (w[count]!= '\n' && w[count]!= '\t' && w[count]!= ' '&& w[count]!= '\r'){
+                    count++;
+        }
+        else{
+            w[count] = '\0';
+            count++;
+            break;
+        }
+            
     }
-    w[count] = '\0';
     return count;
 }
+
+
 
 int substring(char* str1, char* str2){
     int j;
@@ -45,57 +59,77 @@ int substring(char* str1, char* str2){
     return 0;
 }
 
+
 int similar(char* s, char* t, int n){
-    int count, j;
+    int count = 0;
     if (strlen(s)!= strlen(t)+n){
         return 0;
     }
-    for (int i = 0 ; i < strlen(s) - strlen(t)+1; i++){
-        count = 0;
-        if (s[i] == t[0]){
-            for (j = 0 ; j < strlen(t) ; j++){
-                if (s[i+j]!= t[j]){
-                    count++;
-                }
-            }
-             
-        }
-        if (count == n){
-        return 1;
+    int j, i;
+    for (i = 0, j=0 ; i < strlen(s) && j < strlen(t) ; i++){
+        if (s[i] == t[j]){
+            count ++;
+            j++;
         }
     }
-    
-    return 0;
+    if (count == strlen(t))
+        return 1;
+
+    return 0;  
 }
+
+
 
 void print_similar_words(char * str){
+    char empty[LINE];
+    getLine(empty);
+
     char current[WORD];
-    while(getWord(current) != 0){
-        if (similar(current, str, 1)==1 || similar(current,str,0)==1){
-            printf("%s", current);
-        }
+    int count = 0;
+
+    while (NUMLINES*LINE > count){
+        getWord(current);
+        count++;
+        if (similar(current, str,0) ==1|| similar(current, str,1)==1)
+            printf("%s\n", current);
     }
 }
 
 
-void print_line(char* str){
-    char current[LINE];
-    while(getLine(current) != 0){
-        if (substring(current, str) ==1 ){
-            printf("%s", current);
+
+
+void printLine(char* str){
+    char current[NUMLINES];
+    int count = 0;
+
+    while(NUMLINES > count ){
+        count++;
+        getLine(current);
+        if (substring(current, str)){
+            printf("%s\n", current);
         }
+        if (current[0]== '\0')
+            break;
     }
 }
+
 
 int main(){
-    char word[WORD];
-    char space,choice;
-    scanf("%s %c%c", word, &space, &choice);
+    
+    char word [WORD];
+    char choice;
+    scanf("%s %c", word, &choice);
+    char empty[LINE];
+    getLine(empty); 
+
 
     if (choice == 'a'){
-        print_line(word);
+        char temp[LINE];
+        getLine(temp);
+        printLine(word);
     }
-    if (choice == 'b'){
+
+    if (choice == 'b'){   
         print_similar_words(word);
     }
     return 0;
