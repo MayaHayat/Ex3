@@ -32,7 +32,7 @@ void insertion_sort(int* arr, int len){
 
 //     insertion_sort(arr, SIZE);
 
-//     for (int i = 0 ; i < SIZE-1 ; i++){
+//     for (int i = 0 ; i < SIZE ; i++){
 //         if (i < SIZE-1){
 //             printf("%d,", *(arr+i));
 //         }
@@ -47,13 +47,14 @@ void insertion_sort(int* arr, int len){
 
 void print_array(int *arr, int len) {
 
-	for(int i = 0; i<len-1; i++) {
-        
-		printf("%d,", *arr);
-		arr++;
-        
-	}
-    printf("%d" , *arr); 
+	for (int i = 0 ; i < SIZE ; i++){
+        if (i < SIZE-1){
+            printf("%d,", *(arr+i));
+        }
+        else if (i==SIZE-1){
+            printf("%d", *(arr+i));
+        }
+    }
 	printf("\n");
 }
 
