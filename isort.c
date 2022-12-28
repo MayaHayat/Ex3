@@ -40,41 +40,41 @@ int main(){
             printf("%d", *(arr+i));
         }
     }
-    printf("\n")
+    printf("\n");
     return 0;
 }
 
 
-void print_array(int *arr, int len) {
+// void print_array(int *arr, int len) {
 
-	for(int i = 0; i<len-1; i++) {
+// 	for(int i = 0; i<len-1; i++) {
         
-		printf("%d,", *arr);
-		arr++;
+// 		printf("%d,", *arr);
+// 		arr++;
         
-	}
-    printf("%d" , *arr); 
-	printf("\n");
-}
+// 	}
+//     printf("%d" , *arr); 
+// 	printf("\n");
+// }
 
 
 
-int main(){
+// int main(){
 
-    int number[SIZE];
+//     int number[SIZE];
     
-    for (int i = 0; i < SIZE ;i++)
-    {
-       //printf("Enter a number: ");
-       scanf("%d",&number[i]);
+//     for (int i = 0; i < SIZE ;i++)
+//     {
+//        //printf("Enter a number: ");
+//        scanf("%d",&number[i]);
 
 
        
-    }
-    insertion_sort(&number[0],SIZE);
+//     }
+//     insertion_sort(&number[0],SIZE);
     
-    print_array(&number[0],SIZE);
+//     print_array(&number[0],SIZE);
 
-  return 0;
+//   return 0;
 
-}
+// }
