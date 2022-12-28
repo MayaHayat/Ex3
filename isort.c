@@ -24,24 +24,25 @@ void insertion_sort(int* arr, int len){
 }
 
 
-// int main(){
-//     int arr[SIZE];
-//     for (int i = 0 ; i < SIZE ; i++){
-//         scanf("%d",&arr[i]);
-//     }
+int main(){
+    int arr[SIZE];
+    for (int i = 0 ; i < SIZE ; i++){
+        scanf("%d",&arr[i]);
+    }
 
-//     insertion_sort(arr, SIZE);
+    insertion_sort(arr, SIZE);
 
-//     for (int i = 0 ; i < SIZE-1 ; i++){
-//         if (i < SIZE-1){
-//             printf("%d,", *(arr+i));
-//         }
-//         else if (i==SIZE-1){
-//             printf("%d", *(arr+i));
-//         }
-//     }
-//     return 0;
-// }
+    for (int i = 0 ; i < SIZE-1 ; i++){
+        if (i < SIZE-1){
+            printf("%d,", *(arr+i));
+        }
+        else if (i==SIZE-1){
+            printf("%d", *(arr+i));
+        }
+    }
+    printf("\n")
+    return 0;
+}
 
 
 void print_array(int *arr, int len) {
