@@ -24,57 +24,57 @@ void insertion_sort(int* arr, int len){
 }
 
 
-int main(){
-    int arr[SIZE];
-    for (int i = 0 ; i < SIZE ; i++){
-        scanf("%d",&arr[i]);
-    }
+// int main(){
+//     int arr[SIZE];
+//     for (int i = 0 ; i < SIZE ; i++){
+//         scanf("%d",&arr[i]);
+//     }
 
-    insertion_sort(arr, SIZE);
+//     insertion_sort(arr, SIZE);
 
-    for (int i = 0 ; i < SIZE-1 ; i++){
-        if (i < SIZE-1){
-            printf("%d,", *(arr+i));
-        }
-        else if (i==SIZE-1){
-            printf("%d", *(arr+i));
-        }
-    }
-    printf("\n");
-    return 0;
+//     for (int i = 0 ; i < SIZE-1 ; i++){
+//         if (i < SIZE-1){
+//             printf("%d,", *(arr+i));
+//         }
+//         else if (i==SIZE-1){
+//             printf("%d", *(arr+i));
+//         }
+//     }
+//     printf("\n");
+//     return 0;
+// }
+
+
+void print_array(int *arr, int len) {
+
+	for(int i = 0; i<len-1; i++) {
+        
+		printf("%d,", *arr);
+		arr++;
+        
+	}
+    printf("%d" , *arr); 
+	printf("\n");
 }
 
 
-// void print_array(int *arr, int len) {
 
-// 	for(int i = 0; i<len-1; i++) {
-        
-// 		printf("%d,", *arr);
-// 		arr++;
-        
-// 	}
-//     printf("%d" , *arr); 
-// 	printf("\n");
-// }
+int main(){
 
-
-
-// int main(){
-
-//     int number[SIZE];
+    int number[SIZE];
     
-//     for (int i = 0; i < SIZE ;i++)
-//     {
-//        //printf("Enter a number: ");
-//        scanf("%d",&number[i]);
+    for (int i = 0; i < SIZE ;i++)
+    {
+       //printf("Enter a number: ");
+       scanf("%d",&number[i]);
 
 
        
-//     }
-//     insertion_sort(&number[0],SIZE);
+    }
+    insertion_sort(&number[0],SIZE);
     
-//     print_array(&number[0],SIZE);
+    print_array(&number[0],SIZE);
 
-//   return 0;
+  return 0;
 
-// }
+}
