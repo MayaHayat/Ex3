@@ -33,10 +33,10 @@ int main(){
     insertion_sort(arr, SIZE);
 
     for (int i = 0 ; i < SIZE ; i++){
-        if (i < SIZE){
+        if (i < SIZE-1){
             printf("%d,", *(arr+i));
         }
-        else if (i==SIZE){
+        else if (i==SIZE-1){
             printf("%d", *(arr+i));
         }
     }
