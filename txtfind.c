@@ -82,8 +82,7 @@ int similar(char* s, char* t, int n){
 
 void print_similar_words(char * str){
     
-
-    char current[WORD];
+    char current[WORD] ={0};
     int count = 0;
 
     while (NUMLINES*LINE > count){
@@ -98,7 +97,7 @@ void print_similar_words(char * str){
 
 
 void printLine(char* str){
-    char current[NUMLINES];
+    char current[NUMLINES]= {0};
     int count = 0;
 
     while(NUMLINES > count ){
@@ -115,21 +114,21 @@ void printLine(char* str){
 
 int main(){
     
-    char word [WORD];
-    char choice;
+    char word [WORD] ={0};
+    char choice='\0';
     scanf("%s %c", word, &choice);
-    char empty[LINE];
+    char empty[LINE]={0};
     getLine(empty); 
 
 
     if (choice == 'a'){
-        char temp[LINE];
+        char temp[LINE]={0} ;
         getLine(temp);
         printLine(word);
     }
 
     if (choice == 'b'){ 
-        char empty[LINE];
+        char empty[LINE]={0};
         getLine(empty);  
         print_similar_words(word);
     }
