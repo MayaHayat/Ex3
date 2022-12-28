@@ -81,8 +81,7 @@ int similar(char* s, char* t, int n){
 
 
 void print_similar_words(char * str){
-    char empty[LINE];
-    getLine(empty);
+    
 
     char current[WORD];
     int count = 0;
@@ -129,7 +128,9 @@ int main(){
         printLine(word);
     }
 
-    if (choice == 'b'){   
+    if (choice == 'b'){ 
+        char empty[LINE];
+        getLine(empty);  
         print_similar_words(word);
     }
     return 0;
