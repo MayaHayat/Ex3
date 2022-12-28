@@ -32,7 +32,7 @@ int main(){
 
     insertion_sort(arr, SIZE);
 
-    for (int i = 0 ; i < SIZE ; i++){
+    for (int i = 0 ; i < SIZE-1 ; i++){
         if (i < SIZE-1){
             printf("%d,", *(arr+i));
         }
