@@ -9,8 +9,8 @@
 
 int getLine(char s[]){
     int count = 0;
-    char temp='\0';
     while (count<LINE ){
+        char temp='\0';
         if (scanf("%c", &temp) == EOF){
             return 0;
         }
@@ -37,14 +37,13 @@ int getWord(char w[]){
     while (count<WORD){
         scanf("%c", &(w[count]));
         if (w[count]!= '\n' && w[count]!= '\t' && w[count]!= ' '&& w[count]!= '\r'){
-                    count++;
+            count++;
         }
         else{
             w[count] = '\0';
             count++;
             break;
-        }
-            
+        }  
     }
     return count;
 }
@@ -97,7 +96,7 @@ void print_similar_words(char * str){
     while (NUMLINES*LINE > count){
         getWord(current);
         count++;
-        if (similar(current, str,0) ==1|| similar(current, str,1)==1)
+        if (similar(current, str,0)|| similar(current, str,1))
             printf("%s\n", current);
     }
 }
